@@ -1,0 +1,42 @@
+.fa-xmark:before,
+.fa-bookmark:before {
+  cursor: pointer;
+}
+
+.fa-xmark { 
+  color: rgb(184, 184, 184);
+}
+
+.fa-xmark:hover {
+  opacity: 0.8;
+  color: rgb(53, 53, 53);
+}
+
+
+.doc {
+  color: #3e3e3e;
+  text-align: left;
+  .sv_Entry {
+    & > * {
+      margin: 10px;
+    }
+    .sv_Head {
+      display: inline;
+      font-size: 1.5rem;
+      font-weight: 300;
+      .sv_VR {
+        text-transform: capitalize;
+      }
+    }
+    .sv_Sense {
+      .sv_NS {
+      }
+    }
+    .sv_LI {
+      display: none;
+    }
+  }
+}
+.subtitle {
+  display: none;
+}

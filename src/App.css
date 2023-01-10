@@ -1,0 +1,18 @@
+#root {
+  max-width: 100%;
+  text-align: center;
+}
+
+@media (min-height:700px) {
+  .header {
+    transition: padding 0.5s ease-in;
+    padding: 2rem 2rem 2rem 2rem;
+  }
+}
+
+@media (max-height:730px) {
+  .header {
+    transition: padding 0.5s ease-in;
+    padding: 1rem 2rem 0 2rem;
+  }
+}

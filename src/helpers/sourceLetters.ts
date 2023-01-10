@@ -1,0 +1,40 @@
+const sourceLetters = {
+  'a' : 11,
+  'ā' : 4,
+  'b' : 1,
+  'c' : 1,
+  'č' : 1,
+  'd' : 3,
+  'e' : 6,
+  'ē' : 2,
+  'f' : 1,
+  'g' : 1,
+  'ģ' : 1,
+  'h' : 1,
+  'i' : 9,
+  'ī' : 2,
+  'j' : 2,
+  'k' : 4,
+  'ķ' : 1,
+  'l' : 3,
+  'ļ' : 1,
+  'm' : 4,
+  'n' : 4,
+  'ņ' : 1,
+  'o' : 3,
+  'p' : 3,
+  'r' : 5,
+  's' : 8,
+  'š' : 1,
+  't' : 6,
+  'u' : 5,
+  'ū' : 1,
+  'v' : 3,
+  'z' : 2,
+  'ž' : 1,
+  // '': 2
+}
+
+export default sourceLetters
+
+export type SourceLetters = typeof sourceLetters
