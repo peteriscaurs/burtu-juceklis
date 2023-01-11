@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Modal = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -23,7 +23,7 @@ export const ModalContent = styled.div`
   grid-template-rows: 30px auto 30px;
   padding: 2em 1.8em;
   width: 700px;
-  height: 500px;
+  height: calc(100% - 5rem);
   max-width: 100%;
   max-height: 100%;
   background-color: white;
