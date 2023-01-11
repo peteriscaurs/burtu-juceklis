@@ -30,7 +30,7 @@ function App() {
     }
   }, []);
 
-  function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+  function handleInputChange(event: React.BaseSyntheticEvent<any>) {
     const value = event.target.value;
     const isValid = isScrabbleInputValid(value);
     if (isValid) {
@@ -38,10 +38,7 @@ function App() {
       scrabbleWordStore.setValidationCopy("");
       return;
     }
-    const lastInputLetter = value[
-      value.length - 1
-    ].toLowerCase() as keyof SourceLetters;
-    const copy = getValidationCopy(lastInputLetter);
+    const copy = getValidationCopy(event.nativeEvent.data);
     scrabbleWordStore.setValidationCopy(copy);
   }
 
