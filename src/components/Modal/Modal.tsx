@@ -57,7 +57,7 @@ function MyModal({ show, onClose }: ModalProps) {
         </button> */}
       </Modal.Header>
       <Modal.Body className="modal-body">
-        {!scrabbleWordStore.wordMeaning ? (
+        {/* {!scrabbleWordStore.wordMeaning ? (
           <div
             style={{
               display: "flex",
@@ -69,13 +69,13 @@ function MyModal({ show, onClose }: ModalProps) {
               <span className="visually-hidden">Loading...</span>
             </Spinner>
           </div>
-        ) : (
-          <div
-            dangerouslySetInnerHTML={{
-              __html: scrabbleWordStore.wordMeaning,
-            }}
-          ></div>
-        )}
+        ) : ( */}
+        <div
+          dangerouslySetInnerHTML={{
+            __html: scrabbleWordStore.wordMeaning,
+          }}
+        ></div>
+        {/* )} */}
       </Modal.Body>
       <Modal.Footer className="modal-footer">
         <button
