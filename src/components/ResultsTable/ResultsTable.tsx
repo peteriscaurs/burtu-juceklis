@@ -77,8 +77,11 @@ function ResultsTable() {
       }
       return table;
     }
+    if (JSON.parse(localStorage.getItem("results") as string)?.length) {
+      return table;
+    }
     if (!scrabbleWordStore.savedWords?.length) {
-      return <Styled.NoResults>nav rezultātu</Styled.NoResults>;
+      return;
     }
     return table;
   }
