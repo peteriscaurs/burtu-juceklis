@@ -52,7 +52,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   font-size: 80%;
   position: absolute;
 `;function D_({value:e,onChange:t,validationCopy:n,dataAttributes:r}){const[i,o]=$.exports.useState("");function l(){if(o(e),e!==i){if(D.setCurrentPage(1),D.isSavedWordView){if(e===""){D.setSavedWords(JSON.parse(localStorage.getItem("savedWords")));return}const u=D.getSavedWordsResults(e);D.setSavedWords(u);return}D.setResults(e)}}function s(u){u.key==="Enter"&&l()}function a(){l()}return nt(b_,{children:[nt(L_,{children:[V($_,{value:e.toLowerCase(),onChange:t,onKeyDown:s,...r}),V(I_,{onClick:a,children:V("i",{className:"fa fa-search fa-md"})})]}),V(j_,{children:n})]})}var Gv={exports:{}};(function(e){(function(){var t={}.hasOwnProperty;function n(){for(var r=[],i=0;i<arguments.length;i++){var o=arguments[i];if(!!o){var l=typeof o;if(l==="string"||l==="number")r.push(o);else if(Array.isArray(o)){if(o.length){var s=n.apply(null,o);s&&r.push(s)}}else if(l==="object"){if(o.toString!==Object.prototype.toString&&!o.toString.toString().includes("[native code]")){r.push(o.toString());continue}for(var a in o)t.call(o,a)&&o[a]&&r.push(a)}}}return r.join(" ")}e.exports?(n.default=n,e.exports=n):window.classNames=n})()})(Gv);const ii=Gv.exports,M_=De.div`
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
