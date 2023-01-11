@@ -17,6 +17,8 @@ export class ScrabbleWordStore {
 
   wordMeaning: any
 
+  loadingWordMeaning = false
+
   currentPage: number = 1
 
   isSavedWordView = false
@@ -28,6 +30,9 @@ export class ScrabbleWordStore {
       results: observable,
       setResults: action,
       savedWords: observable,
+      wordMeaning: observable,
+      loadingWordMeaning: observable,
+      setLoadingWordMeaning: observable,
       setSavedWords: action,
       setSelectedWord: action,
       isSavedWord: computed,
@@ -65,9 +70,11 @@ export class ScrabbleWordStore {
   }
   /** fetches data about selected word meaning */
   async retrieveEntry(selectedWord: string) {
+    this.setLoadingWordMeaning(true)
     const response = await fetch(`https://tezaurs.lv/api/retrieveEntry?hw=${selectedWord}`)
     const text = await response.text()
     this.wordMeaning = text
+    this.setLoadingWordMeaning(false)
   }
   /** sets the results observable */
   setResults(letters: string) {
@@ -93,6 +100,11 @@ export class ScrabbleWordStore {
   setSelectedWord(word: Word) {
     this.selectedWord = word
   }
+
+  setLoadingWordMeaning(loading: boolean) {
+    this.loadingWordMeaning = loading
+  }
+
   get isSavedWord() {
     return this.savedWords.some((e: Word) => e.letters === this.selectedWord?.letters)
   }

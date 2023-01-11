@@ -7,6 +7,7 @@ import "./modal.scss";
 
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import Spinner from "react-bootstrap/Spinner";
 
 interface ModalProps {
   show: boolean;
@@ -56,12 +57,17 @@ function MyModal({ show, onClose }: ModalProps) {
         </button> */}
       </Modal.Header>
       <Modal.Body className="modal-body">
-        {!scrabbleWordStore.wordMeaning && "loading"}
-        <div
-          dangerouslySetInnerHTML={{
-            __html: scrabbleWordStore.wordMeaning,
-          }}
-        ></div>
+        {scrabbleWordStore.loadingWordMeaning ? (
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        ) : (
+          <div
+            dangerouslySetInnerHTML={{
+              __html: scrabbleWordStore.wordMeaning,
+            }}
+          ></div>
+        )}
       </Modal.Body>
       <Modal.Footer className="modal-footer">
         <button

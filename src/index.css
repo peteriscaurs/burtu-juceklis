@@ -39,6 +39,7 @@ body {
   /* position: fixed; */
   margin: 0;
   width: 100vw;
+  max-height: 100vh;
   color: rgb(45, 45, 45);
 }
 

@@ -3,6 +3,13 @@
 //   cursor: pointer;
 // }
 
+.modal-footer {
+  button {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
 .fa-xmark { 
   color: rgb(184, 184, 184);
 }
