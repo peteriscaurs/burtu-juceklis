@@ -43,7 +43,7 @@ function SearchInput({
     if (scrabbleWordStore.isSavedWordView) {
       if (value === "") {
         scrabbleWordStore.setSavedWords(
-          JSON.parse(localStorage.getItem("savedWords"))
+          JSON.parse(localStorage.getItem("savedWords") as string)
         );
         return;
       }

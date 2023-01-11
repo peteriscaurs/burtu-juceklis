@@ -108,7 +108,7 @@ export class ScrabbleWordStore {
   }
 
   getSavedWordsResults(letters: string) {
-    const storedWords = JSON.parse(localStorage.getItem('savedWords'))
+    const storedWords = JSON.parse(localStorage.getItem('savedWords') as string)
     const savedWordFinder = new ScrabbleWordFinder(storedWords)
     return savedWordFinder.find(letters)
   }

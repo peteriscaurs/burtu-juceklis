@@ -9,6 +9,7 @@ import "./App.css";
 import Footer from "./components/Footer/Footer";
 import isScrabbleInputValid from "./helpers/isInputValid";
 import getValidationCopy from "./helpers/getValidationCopy";
+import { SourceLetters } from "./helpers/sourceLetters";
 
 let didInit = false;
 
@@ -36,8 +37,10 @@ function App() {
       scrabbleWordStore.setValidationCopy("");
       return;
     }
-    const lastInputLetter = value[value.length - 1];
-    const copy = getValidationCopy(lastInputLetter.toLowerCase());
+    const lastInputLetter = value[
+      value.length - 1
+    ].toLowerCase() as keyof SourceLetters;
+    const copy = getValidationCopy(lastInputLetter);
     scrabbleWordStore.setValidationCopy(copy);
   }
 
@@ -90,7 +93,6 @@ function App() {
         value={inputValue}
         onChange={handleInputChange}
         validationCopy={scrabbleWordStore.validationCopy}
-        withButton={!scrabbleWordStore.isSavedWordView}
         allCaps
         dataAttributes={{ "data-testid": "search-scrabble-word" }}
       />

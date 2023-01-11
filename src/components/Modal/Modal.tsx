@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { observer } from "mobx-react";
 import classNames from "classnames";
 import scrabbleWordStore from "../../stores/scrabbleWordStore";
@@ -8,10 +8,9 @@ import "./modal.scss";
 interface ModalProps {
   show: boolean;
   onClose: () => void;
-  currentTableData: any;
 }
 
-function Modal({ show, onClose, currentTableData }: ModalProps) {
+function Modal({ show, onClose }: ModalProps) {
   const [isAnimationActive, setIsAnimationActive] = useState(false);
 
   useEffect(() => {
@@ -20,8 +19,8 @@ function Modal({ show, onClose, currentTableData }: ModalProps) {
     }, 1000);
   }, [isAnimationActive]);
 
-  function closeOnEscapeKeyDown(e) {
-    if ((e.charCode || e.keyCode) === 27) {
+  function closeOnEscapeKeyDown(event: KeyboardEvent) {
+    if (event.key === "Escape") {
       onClose();
     }
   }
@@ -74,7 +73,7 @@ function Modal({ show, onClose, currentTableData }: ModalProps) {
                 );
                 // detect if last word in current page data
                 if (
-                  !scrabbleWordStore.savedWords.length % 10 === 0 &&
+                  scrabbleWordStore.savedWords.length % 10 === 0 &&
                   scrabbleWordStore.currentPage !== 1
                 ) {
                   scrabbleWordStore.setCurrentPage(

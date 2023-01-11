@@ -15,7 +15,7 @@ function ResultsTable() {
     const firstPageIndex = (scrabbleWordStore.currentPage - 1) * PageSize;
     const lastPageIndex = firstPageIndex + PageSize;
     if (!scrabbleWordStore.isSavedWordView) {
-      return JSON.parse(localStorage.getItem("results"))?.slice(
+      return JSON.parse(localStorage.getItem("results") as string)?.slice(
         firstPageIndex,
         lastPageIndex
       );
@@ -85,7 +85,7 @@ function ResultsTable() {
 
   function getResultsLength() {
     if (scrabbleWordStore.results === undefined) {
-      return JSON.parse(localStorage.getItem("results"))?.length || 0;
+      return JSON.parse(localStorage.getItem("results") as string)?.length || 0;
     }
     return scrabbleWordStore.results?.length || 0;
   }
@@ -104,11 +104,7 @@ function ResultsTable() {
         pageSize={PageSize}
         onPageChange={(page: number) => scrabbleWordStore.setCurrentPage(page)}
       />
-      <Modal
-        show={show}
-        onClose={() => setShow(false)}
-        currentTableData={currentTableData}
-      />
+      <Modal show={show} onClose={() => setShow(false)} />
     </Styled.Wrapper>
   );
 }
