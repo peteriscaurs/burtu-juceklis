@@ -29,8 +29,10 @@ export const Th = styled.th`
 `
 
 export const Row = styled.tr`
-  &:hover {
+  @media (hover: hover) {
+    &:hover {
     background-color: rgba(131, 58, 180, 0.1);
+  }
   }
   &:last-child td:first-child {
   padding-bottom: 0.5rem;

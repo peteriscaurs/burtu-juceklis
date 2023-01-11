@@ -53,13 +53,7 @@ function App() {
         }}
       >
         <img alt="logo" src={logo} width={50} />
-        <i
-          className="fa-solid fa-bookmark fa-xl"
-          style={{
-            color: !scrabbleWordStore.isSavedWordView
-              ? "rgba(202, 202, 202, 0.8)"
-              : "rgba(94, 24, 141, 0.803)",
-          }}
+        <button
           onClick={() => {
             if (!scrabbleWordStore.savedWords.length) {
               notify(); // todo: debounce
@@ -72,7 +66,16 @@ function App() {
             scrabbleWordStore.setValidationCopy("");
             scrabbleWordStore.setCurrentPage(1);
           }}
-        ></i>
+        >
+          <i
+            className="fa-solid fa-bookmark fa-xl"
+            style={{
+              color: !scrabbleWordStore.isSavedWordView
+                ? "rgba(202, 202, 202, 0.8)"
+                : "rgba(94, 24, 141, 0.803)",
+            }}
+          ></i>
+        </button>
       </div>
       <h1 className="title">Burtu Juceklis</h1>
       <ToastContainer

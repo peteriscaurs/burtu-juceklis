@@ -40,8 +40,8 @@ function Modal({ show, onClose }: ModalProps) {
     <Styled.Modal onClick={() => onClose()}>
       <Styled.ModalContent onClick={(e) => e.stopPropagation()}>
         <Styled.ModalHeader>
-          <button style={{ display: "flex", alignItems: "center" }}>
-            <i className="fa-solid fa-xmark fa-md" onClick={onClose}></i>
+          <button onClick={onClose}>
+            <i className="fa-solid fa-xmark fa-md"></i>
           </button>
         </Styled.ModalHeader>
         <div className="modal-body">
@@ -53,16 +53,7 @@ function Modal({ show, onClose }: ModalProps) {
           ></div>
         </div>
         <Styled.ModalFooter className="modal-footer">
-          <i
-            className={classNames({
-              "fa-solid fa-bookmark fa-xl": true,
-              "fa-bounce": isAnimationActive,
-            })}
-            style={{
-              color: scrabbleWordStore.isSavedWord
-                ? "rgba(131, 58, 180, 0.8)"
-                : "rgba(202, 202, 202, 0.8)",
-            }}
+          <button
             onClick={() => {
               if (!scrabbleWordStore.isSavedWord) {
                 scrabbleWordStore.saveWord(scrabbleWordStore.selectedWord);
@@ -85,7 +76,19 @@ function Modal({ show, onClose }: ModalProps) {
                 }
               }
             }}
-          ></i>
+          >
+            <i
+              className={classNames({
+                "fa-solid fa-bookmark fa-xl": true,
+                "fa-bounce": isAnimationActive,
+              })}
+              style={{
+                color: scrabbleWordStore.isSavedWord
+                  ? "rgba(131, 58, 180, 0.8)"
+                  : "rgba(202, 202, 202, 0.8)",
+              }}
+            ></i>
+          </button>
         </Styled.ModalFooter>
       </Styled.ModalContent>
     </Styled.Modal>

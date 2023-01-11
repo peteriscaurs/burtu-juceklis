@@ -39,7 +39,9 @@ export const ModalFooter = styled.div`
 `
 
 export const Button = styled.button`
-margin-left: 1rem;
+  /* display: flex; */
+  /* alignItems: center; */
+  border: 1px solid #444;
 `
 
 export const ModalTitle = styled.div`

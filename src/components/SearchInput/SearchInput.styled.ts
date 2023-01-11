@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   text-align: left;
   margin: 0 auto;
   padding: 0 2rem;
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
 `
 
 export const InputWrapper = styled.div`
