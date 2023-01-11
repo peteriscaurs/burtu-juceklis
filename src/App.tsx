@@ -10,6 +10,7 @@ import isScrabbleInputValid from "./helpers/isInputValid";
 import getValidationCopy from "./helpers/getValidationCopy";
 import { SourceLetters } from "./helpers/sourceLetters";
 import logo from "./assets/logo192.png";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 let didInit = false;

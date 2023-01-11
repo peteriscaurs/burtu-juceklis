@@ -1,7 +1,7 @@
 import { observer } from "mobx-react";
 import { useMemo, useState } from "react";
 import scrabbleWordStore from "../../stores/scrabbleWordStore";
-import Modal from "../Modal/Modal";
+import MyModal from "../Modal/Modal";
 import Pagination from "./Pagination/Pagination";
 import * as Styled from "./ResultsTable.styled";
 import { Word } from "../../types/types";
@@ -107,7 +107,7 @@ function ResultsTable() {
         pageSize={PageSize}
         onPageChange={(page: number) => scrabbleWordStore.setCurrentPage(page)}
       />
-      <Modal show={show} onClose={() => setShow(false)} />
+      <MyModal show={show} onClose={() => setShow(false)} />
     </Styled.Wrapper>
   );
 }

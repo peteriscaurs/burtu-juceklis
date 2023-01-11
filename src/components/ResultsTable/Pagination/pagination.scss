@@ -1,9 +1,10 @@
 ul {
-  padding: 0;
+  padding-top: 1rem;
+  padding-left: 0 !important;
 }
 
 .pagination-container {
-  margin-bottom: 2rem; // todo
+  // margin-bottom: 2rem; // todo
   display: flex;
   list-style-type: none;
   justify-content: center;
