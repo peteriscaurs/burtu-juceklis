@@ -57,7 +57,7 @@ function MyModal({ show, onClose }: ModalProps) {
         </button> */}
       </Modal.Header>
       <Modal.Body className="modal-body">
-        {scrabbleWordStore.loadingWordMeaning ? (
+        {!scrabbleWordStore.wordMeaning ? (
           <div
             style={{
               display: "flex",

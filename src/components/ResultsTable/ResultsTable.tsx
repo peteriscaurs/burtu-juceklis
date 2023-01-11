@@ -107,7 +107,13 @@ function ResultsTable() {
         pageSize={PageSize}
         onPageChange={(page: number) => scrabbleWordStore.setCurrentPage(page)}
       />
-      <MyModal show={show} onClose={() => setShow(false)} />
+      <MyModal
+        show={show}
+        onClose={() => {
+          setShow(false);
+          scrabbleWordStore.setWordMeaning(null);
+        }}
+      />
     </Styled.Wrapper>
   );
 }

@@ -15,9 +15,7 @@ export class ScrabbleWordStore {
   /** an array with words found in local storage */
   savedWords: any = []
 
-  wordMeaning: any
-
-  loadingWordMeaning = false
+  wordMeaning: any = null
 
   currentPage: number = 1
 
@@ -31,8 +29,7 @@ export class ScrabbleWordStore {
       setResults: action,
       savedWords: observable,
       wordMeaning: observable,
-      loadingWordMeaning: observable,
-      setLoadingWordMeaning: observable,
+      setWordMeaning: action,
       setSavedWords: action,
       setSelectedWord: action,
       isSavedWord: computed,
@@ -70,11 +67,9 @@ export class ScrabbleWordStore {
   }
   /** fetches data about selected word meaning */
   async retrieveEntry(selectedWord: string) {
-    this.setLoadingWordMeaning(true)
     const response = await fetch(`https://tezaurs.lv/api/retrieveEntry?hw=${selectedWord}`)
     const text = await response.text()
-    this.wordMeaning = text
-    this.setLoadingWordMeaning(false)
+    this.setWordMeaning(text)
   }
   /** sets the results observable */
   setResults(letters: string) {
@@ -101,10 +96,6 @@ export class ScrabbleWordStore {
     this.selectedWord = word
   }
 
-  setLoadingWordMeaning(loading: boolean) {
-    this.loadingWordMeaning = loading
-  }
-
   get isSavedWord() {
     return this.savedWords.some((e: Word) => e.letters === this.selectedWord?.letters)
   }
@@ -123,6 +114,10 @@ export class ScrabbleWordStore {
     const storedWords = JSON.parse(localStorage.getItem('savedWords') as string)
     const savedWordFinder = new ScrabbleWordFinder(storedWords)
     return savedWordFinder.find(letters)
+  }
+
+  setWordMeaning(meaning: any) {
+    this.wordMeaning = meaning
   }
 
   setSavedWords(words: Word[]) {
