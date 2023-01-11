@@ -24,9 +24,7 @@ a {
   font-weight: 500;
   color: rgba(65, 20, 92, 0.5);
   text-decoration: inherit;
-}
-a:hover {
-  color: rgba(65, 20, 92, 0.5);
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -56,15 +54,19 @@ button {
   font-family: inherit;
   background-color: inherit;
   transition: border-color 0.25s;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button:active {
-  background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media (hover: hover) {
   button:hover {
     cursor: pointer;
+  }
+  a:hover {
+    color: rgba(65, 20, 92, 0.5);
   }
 }
 
