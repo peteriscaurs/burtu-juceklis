@@ -54,7 +54,7 @@ function App() {
           alignItems: "center",
         }}
       >
-        <img src="/favicon.ico" />
+        <img src="/public/favicon.ico" />
         <i
           className="fa-solid fa-bookmark fa-xl"
           style={{
