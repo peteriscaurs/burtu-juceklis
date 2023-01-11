@@ -29,9 +29,9 @@ function ResultsTable() {
   ]);
 
   async function showMeaning(word: Word) {
-    await scrabbleWordStore.retrieveEntry(word.letters);
-    scrabbleWordStore.setSelectedWord(word);
     setShow(true);
+    scrabbleWordStore.setSelectedWord(word);
+    await scrabbleWordStore.retrieveEntry(word.letters);
   }
 
   function handleKeyDown(e: React.KeyboardEvent, word: Word) {

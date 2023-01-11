@@ -58,9 +58,17 @@ function MyModal({ show, onClose }: ModalProps) {
       </Modal.Header>
       <Modal.Body className="modal-body">
         {scrabbleWordStore.loadingWordMeaning ? (
-          <Spinner animation="border" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </Spinner>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Spinner animation="border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
+          </div>
         ) : (
           <div
             dangerouslySetInnerHTML={{
