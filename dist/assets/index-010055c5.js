@@ -76,8 +76,10 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   background-color: white;
   box-shadow: 0 0 10px rgba(42, 42, 42, 0.3);
   border-radius: 0.25rem;
-  overflow-y: scroll !important;
-  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  overflow: scroll;
+  /* overflow-y: scroll; */
+  /* -webkit-overflow-scrolling: touch; */
 `,B_=De.div`
   display: flex;
   justify-content: flex-end;
