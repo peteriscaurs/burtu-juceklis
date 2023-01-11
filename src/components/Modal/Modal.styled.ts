@@ -29,19 +29,14 @@ export const ModalContent = styled.div`
   background-color: white;
   box-shadow: 0 0 10px rgba(42, 42, 42, 0.3);
   border-radius: 0.25rem;
-  overflow: auto;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 `
 
 export const ModalFooter = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-`
-
-export const Button = styled.button`
-  /* display: flex; */
-  /* alignItems: center; */
-  border: 1px solid #444;
 `
 
 export const ModalTitle = styled.div`

@@ -58,6 +58,10 @@ button {
   transition: border-color 0.25s;
 }
 
+button:active {
+  background-color: transparent;
+}
+
 @media (hover: hover) {
   button:hover {
     cursor: pointer;
