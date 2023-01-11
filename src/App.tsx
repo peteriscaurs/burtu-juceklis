@@ -5,11 +5,12 @@ import ResultsTable from "./components/ResultsTable/ResultsTable";
 import scrabbleWordStore from "./stores/scrabbleWordStore";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./App.css";
 import Footer from "./components/Footer/Footer";
 import isScrabbleInputValid from "./helpers/isInputValid";
 import getValidationCopy from "./helpers/getValidationCopy";
 import { SourceLetters } from "./helpers/sourceLetters";
+import logo from "./assets/logo192.png";
+import "./App.css";
 
 let didInit = false;
 
@@ -54,7 +55,7 @@ function App() {
           alignItems: "center",
         }}
       >
-        <img src="./logo192.png" width={50} />
+        <img alt="logo" src={logo} width={50} />
         <i
           className="fa-solid fa-bookmark fa-xl"
           style={{
