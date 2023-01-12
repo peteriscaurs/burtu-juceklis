@@ -15,13 +15,13 @@ interface ModalProps {
 }
 
 function MyModal({ show, onClose }: ModalProps) {
-  const [isAnimationActive, setIsAnimationActive] = useState(false);
+  // const [isAnimationActive, setIsAnimationActive] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsAnimationActive(false);
-    }, 1000);
-  }, [isAnimationActive]);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setIsAnimationActive(false);
+  //   }, 1000);
+  // }, [isAnimationActive]);
 
   function closeOnEscapeKeyDown(event: KeyboardEvent) {
     if (event.key === "Escape") {
@@ -32,7 +32,7 @@ function MyModal({ show, onClose }: ModalProps) {
   function handleSaveWord() {
     if (!scrabbleWordStore.isSavedWord) {
       scrabbleWordStore.saveWord(scrabbleWordStore.selectedWord);
-      setIsAnimationActive(true);
+      // setIsAnimationActive(true);
       return;
     }
     scrabbleWordStore.removeWord(scrabbleWordStore.selectedWord?.letters);
@@ -79,9 +79,10 @@ function MyModal({ show, onClose }: ModalProps) {
       <Modal.Footer className="modal-footer">
         <button onClick={handleSaveWord}>
           <svg
-            className={classNames({
-              "fa-bounce": isAnimationActive,
-            })}
+            // todo: write css animation myself
+            // className={classNames({
+            //   "fa-bounce": isAnimationActive,
+            // })}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 384 512"
             width="1.13rem"
