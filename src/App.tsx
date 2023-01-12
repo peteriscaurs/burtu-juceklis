@@ -4,13 +4,12 @@ import SearchInput from "./components/SearchInput";
 import ResultsTable from "./components/ResultsTable/ResultsTable";
 import scrabbleWordStore from "./stores/scrabbleWordStore";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import Footer from "./components/Footer/Footer";
 import isScrabbleInputValid from "./helpers/isInputValid";
 import getValidationCopy from "./helpers/getValidationCopy";
-import { SourceLetters } from "./helpers/sourceLetters";
 import logo from "./assets/logo192.png";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 let didInit = false;
@@ -53,7 +52,7 @@ function App() {
           alignItems: "center",
         }}
       >
-        <img alt="logo" src={logo} width={50} />
+        <img alt="logo" src={logo} width={45} />
         <button
           onClick={() => {
             if (!scrabbleWordStore.savedWords.length) {
@@ -68,14 +67,26 @@ function App() {
             scrabbleWordStore.setCurrentPage(1);
           }}
         >
-          <i
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 384 512"
+            width="1.13rem"
+            fill={
+              !scrabbleWordStore.isSavedWordView
+                ? "rgba(202, 202, 202, 0.8)"
+                : "rgba(90, 20, 137, 0.803)"
+            }
+          >
+            <path d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z" />
+          </svg>
+          {/* <i
             className="fa-solid fa-bookmark fa-xl"
             style={{
               color: !scrabbleWordStore.isSavedWordView
                 ? "rgba(202, 202, 202, 0.8)"
                 : "rgba(94, 24, 141, 0.803)",
             }}
-          ></i>
+          ></i> */}
         </button>
       </div>
       <h1 className="title">Burtu Juceklis</h1>
