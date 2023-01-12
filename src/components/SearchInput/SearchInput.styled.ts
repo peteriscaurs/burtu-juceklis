@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   max-width: 512px;
   text-align: left;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 2rem 2rem 2rem;
   /* margin-bottom: 0.5rem; */
 `
 

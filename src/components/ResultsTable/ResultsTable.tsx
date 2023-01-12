@@ -111,7 +111,6 @@ function ResultsTable() {
         show={show}
         onClose={() => {
           setShow(false);
-          // scrabbleWordStore.setWordMeaning(null);
         }}
       />
     </Styled.Wrapper>

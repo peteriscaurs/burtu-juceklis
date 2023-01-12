@@ -102,13 +102,17 @@ function App() {
         pauseOnHover
         theme="light"
       />
-      <SearchInput
-        value={inputValue}
-        onChange={handleInputChange}
-        validationCopy={scrabbleWordStore.validationCopy}
-        allCaps
-        dataAttributes={{ "data-testid": "search-scrabble-word" }}
-      />
+      {!scrabbleWordStore.isSavedWordView ? (
+        <SearchInput
+          value={inputValue}
+          onChange={handleInputChange}
+          validationCopy={scrabbleWordStore.validationCopy}
+          allCaps
+          dataAttributes={{ "data-testid": "search-scrabble-word" }}
+        />
+      ) : (
+        <h4 className="saved-words-heading">Saglabātie Vārdi</h4>
+      )}
       <ResultsTable />
       <Footer />
     </>
